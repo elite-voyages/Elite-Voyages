@@ -29,6 +29,43 @@ overlay.addEventListener("click", (e) => {
     if (e.target === overlay) overlay.style.display = "none";
 });
 
+
+
+// Tour товчийг дарахад overlay гаргах
+openButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const tour = btn.getAttribute("data-tour"); // "1" эсвэл "2"
+
+        // Бүх tour content-ийг хаах
+        document.querySelectorAll(".overlay-tour").forEach(t => t.style.display = "none");
+
+        // Сонгогдсон tour-г харуулах
+        document.querySelector(".overlay-tour-" + tour).style.display = "block";
+
+        overlay.style.display = "flex";
+        document.body.style.overflow = "hidden"; // scroll lock
+    });
+});
+
+// Overlay хаах товч
+closeBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+    document.body.style.overflow = "auto";
+});
+
+// Overlay дээр дарахад хаах
+overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+        overlay.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+});
+
+
+
+
+
+
 // Contact Form
 function handleSubmit(event) {
     event.preventDefault();

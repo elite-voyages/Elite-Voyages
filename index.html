@@ -18,6 +18,7 @@
     <!-- Header -->
     <header>
         <div class="header-container">
+
             <h1 class="logo">Elite Voyages</h1>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             <nav id="mainNav">
@@ -75,9 +76,10 @@
                         <h3 class="tour-title">Архангай - Өгий нуур</h3>
                         <p class="tour-route">📍 УБ → Лүн → Өгий нуур</p>
                         <div class="tour-price">343 км</div>
-                        <button id="openOverlay" class="btn-learn-more">Дэлгэрэнгүй</button>
+                        <button class="btn-learn-more openOverlay" data-tour="2">Дэлгэрэнгүй</button>
                     </div>
                 </div>
+
 
             </div>
         </div>
@@ -174,10 +176,49 @@
 
 
 
-        
+
     </div>
     </div>
-    <!-- Contact Section -->
+
+
+<div id="overlay">
+    <div class="overlay-content">
+
+        <!-- Tour 2 content -->
+        <div class="overlay-tour overlay-tour-2" style="display:none;">
+            <h1>Архангай - Өгий нуур аяллын дэлгэрэнгүй</h1>
+
+            <div class="udr">
+                <h2>1 дахь өдөр: Улаанбаатар → Лүн</h2>
+                <p>Зорилго: Аяллын эхлэл, амралт</p>
+                <ul class="lis">
+                    <li>Улаанбаатараас Лүн рүү автобус</li>
+                    <li>Орой “Welcome Camp” event</li>
+                    <li>Photography & TikTok content workshop</li>
+                </ul>
+            </div>
+
+            <div class="udr">
+                <h2>2–3 дахь өдөр: Өгий нуур ба адал явдал</h2>
+                <ul class="lis">
+                    <li>Өгий нуурын эргээр завь, paddle board</li>
+                    <li>Морин аялал, дугуйн аялал</li>
+                    <li>Live music & campfire</li>
+                </ul>
+            </div>
+
+            <div class="udr">
+                <h2>4 дахь өдөр: Буцах аялал</h2>
+                <ul class="lis">
+                    <li>Лүн → УБ автобус</li>
+                </ul>
+            </div>
+
+            <button id="closeOverlay" class="btn-learn-more1">Хаах</button>
+        </div>
+
+    </div>
+</div>
     <section id="contact" class="section contact-section">
         <div class="container">
 
