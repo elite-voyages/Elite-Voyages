@@ -18,7 +18,7 @@ const closeBtn = document.getElementById("closeOverlay");
 const overlay = document.getElementById("overlay");
 
 openBtn.addEventListener("click", () => {
-    overlay.style.display = "flex";
+    window.location = './ff.html'
 });
 
 closeBtn.addEventListener("click", () => {
@@ -29,6 +29,12 @@ overlay.addEventListener("click", (e) => {
     if (e.target === overlay) overlay.style.display = "none";
 });
 
+let ff = document.getElementById("ff");
+
+
+ff.addEventListener('click', ()=>{
+    window.location = './ff.html'
+})
 
 
 // Tour товчийг дарахад overlay гаргах

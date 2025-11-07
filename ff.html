@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #5d01c7;
+    --color-beige: #D4C4A8;
+    --color-cream: #F5EFE6;
+    --color-dark-brown: #010055;
+    --color-gold: #C9A961;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--color-cream);
+    color: var(--color-dark-brown);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: rgba(245, 239, 230, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-beige);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1.5rem 0;
+}
+
+
+
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav a {
+    color: var(--color-dark-brown);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+nav a:hover {
+    background-color: rgba(139, 111, 71, 0.1);
+}
+
+.btn-call {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-call:hover {
+    background-color: #240077;
+}
+
+.mobile-menu-btn {
+    display: none;  /* Initially hide the hamburger button */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url('https://www.discovermongolia.mn/uploads/b-c-khuvgul-lake-northern-mongolia.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: #010055;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+}
+
+.hero-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+.btn-primary:hover { background-color: #240077; }
+
+.btn-secondary {
+    background-color: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+}
+
+/* Tours Section */
+.section {
+    padding: 5rem 2rem;
+    width: 100%;
+    box-sizing: border-box; /* Make sure padding doesn't affect width */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #240077;
+    margin-bottom: 3rem;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Tour Cards */
+
+
+.section, .tour-card, .contact-card {
+    box-sizing: border-box;
+    width: 100%;
+}
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    box-sizing: border-box; /* Prevent any overflow from grid items */
+}
+
+.tour-card {
+    background: #F0EAE0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform .25s;
+    width: 100%; /* Prevent card from overflowing */
+}
+
+.tour-card:hover { transform: translateY(-6px); }
+
+.tour-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.tour-content { padding: 2rem; }
+
+.tour-duration {
+    background-color: rgba(139, 111, 71, .2);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: .9rem;
+    display: inline-block;
+}
+
+.tour-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    margin-top: .75rem;
+}
+
+.tour-route { margin: .5rem 0; }
+.tour-price {
+    border-top: 1px solid var(--color-beige);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.btn-learn-more {
+    width: 100%;
+    background: var(--color-primary);
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.btn-learn-more:hover { background: #240077; }
+
+/* ✅ Overlay */
+#overlay {
+    width: 100vw;
+    display: none;
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+    animation: overlayFade .25s ease forwards;
+}
+
+/* ✅ Main content card */
+   .overlay-content {
+    background: #ffffff;
+    width: 100%;
+     /* ✅ Контент хэт сунгарахгүй */
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 25px 40px rgba(0,0,0,0.25);
+    animation: cardFade .35s ease forwards;
+    max-height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column; /* ✅ Текст дараалж байрлана */
+}
+
+.udr {
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--color-primary);
+}
+
+
+/* ✅ List */
+.lis {
+    list-style: none;
+    padding-left: 0;
+    margin-top: .4rem;
+}
+.lis li {
+    margin-bottom: .45rem;
+}
+/* ✅ Close button */
+#closeOverlay,
+.btn-learn-more1 {
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    padding: .8rem 1.4rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    transition: .25s;
+}
+#closeOverlay:hover,
+.btn-learn-more1:hover {
+    background: #005bd1;
+}
+
+/* ✅ Fade animations */
+@keyframes overlayFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes cardFade {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: rgba(212, 196, 168, 0.3);
+    width: 100%;
+    box-sizing: border-box; /* Prevent padding from affecting width */
+}
+
+.contact-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #F0EAE0;
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 4px 12px rgba(92, 74, 58, 0.1);
+    width: 100%; /* Ensure the card doesn't overflow */
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    width: 100%;
+    box-sizing: border-box; /* Prevent grid items from overflowing */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--color-beige);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-dark-brown);
+    transition: background-color 0.2s;
+    width: 100%; /* Prevent item from overflowing */
+}
+
+.contact-item:hover {
+    background-color: rgba(139, 111, 71, 0.05);
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(139, 111, 71, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-input {
+    padding: 1rem;
+    border: 1px solid var(--color-beige);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--color-cream);
+}
+
+.form-input:focus {
+    outline: 2px solid var(--color-primary);
+}
+
+textarea.form-input {
+    resize: none;
+    min-height: 120px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-dark-brown);
+    color: var(--color-cream);
+    padding: 3rem 2rem;
+    border-top: 4px solid var(--color-primary);
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: rgba(245, 239, 230, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(245, 239, 230, 0.2);
+    color: rgba(245, 239, 230, 0.6);
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(139, 111, 71, 0.2);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.social-icon:hover {
+    background-color: rgba(139, 111, 71, 0.3);
+}
+
+
+/* Mobile Responsive */
+ @media (max-width: 768px) {
+            
+
+    /* Контент box жижигрэнэ */
+    .overlay-content {
+        width: 95%;
+        max-width: 95%;
+        max-height: 90vh;
+        padding: 1.5rem;
+        border-radius: 10px;
+        text-align: left;
+    }
+
+    /* Гарчиг багасгана */
+    h1 {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: .4rem;
+    }
+
+    p,
+    .lis li {
+        font-size: .95rem;
+        line-height: 1.45rem;
+    }
+
+    /* Өдрийн блок — багана биш, зөвхөн зай */
+    .udr {
+        margin-bottom: 1.7rem;
+        padding-left: .8rem;
+        border-left-width: 3px;
+    }
+
+    /* Товч дэлгэцэд таарах */
+    #closeOverlay,
+    .btn-learn-more1 {
+        width: 100%;
+        padding: 0.9rem;
+        font-size: .95rem;
+        border-radius: 8px;
+    }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+            }
+
+            nav.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--color-cream);
+                padding: 1rem;
+                border-top: 1px solid var(--color-beige);
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+
+            .tours-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        
+
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+
+   
+
+    /* Hero Section */
+    .hero {
+        height: 60vh;
+    }
+
+    /* Tour Cards and Sections */
+    .tours-grid {
+        grid-template-columns: 1fr; /* Stack all tour cards vertically */
+    }
+
+    .tour-card {
+        max-width: 100%;
+        width: 100%; /* Ensure they stay within the screen */
+        padding: 1rem; /* Reduce padding if necessary */
+    }
+
+    .tour-image {
+        height: 200px; /* Reduce height for smaller screens */
+        object-fit: cover;
+    }
+     .contact-section {
+        background-color: rgba(212, 196, 168, 0.3);
+        padding: 3rem 2rem;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Horizontally center */
+        align-items: center; /* Vertically center */
+        min-height: 100vh; /* Full viewport height */
+    }
+     .contact-card {
+        background-color: #F0EAE0;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 4px 12px rgba(92, 74, 58, 0.1);
+        width: 100%;
+        max-width: 90vw; /* Limit the width of the contact card */
+        margin: 0 auto;
+    }
+     .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Stack items vertically */
+        gap: 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    .list{
+        max-width: 80%;
+        
+    }
+    .contact-item{
+        display: flex;
+        text-align: left;
+    }
+
+
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr; /* Stack footer items */
+    }
+
+    /* Adjust contact form input width */
+    .form-input {
+        width: 100%;
+    }
+    .contact-form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+
+
+#overlay{
+    display: none;
+}
+</style>
+</head>
+<body>
+    <div class="overlay-content">
+            <h1>Хөвсгөл далайн аяллын дэлгэрэнгүй</h1>
+            <div class="udr">
+                <h2>
+                    1–2 дахь өдөр: Мөрөн – Хатгал
+                </h2>
+                <p>Зорилго: Найз нөхөдтэй болох</p>
+                <ul class="lis">
+                    <li>Мөрөнд онгоцоор ирээд → Хатгал тосгон руу автобусаар</li>
+                    <li>“Welcome Camp” event — аяллын нээлтийн үдэшлэг</li>
+                    <li>DJ set, bonfire, хөнгөн коктейл </li>
+                    <li>TikTok challenge: “#HuvsgulVibe” эхлүүлэх</li>
+                    <li>Гэр буудал буудалд байрлах</li>
+                    <li>Орой “Mindfulness meditation by the lake” </li>
+                </ul>
+            </div>
+            <div class="udr">
+                <h2>3–4 дахь өдөр: Адал явдал ба спорт</h2>
+                <p>Зорилго: Энерги, контент, биеийн идэвх</p>
+                <ul class="lis">
+                    <li>Нуур дээр Stand Up Paddle Board</li>
+                    <li>Морин аялал / дугуйн аялал – нуурын баруун эргээр</li>
+                    <li>Photography & Drone Workshop (content creator уригдан заана)</li>
+                    <li>Орой “Sunset Cinema Night” – гадаа кино үзэх </li>
+                    <li>Live acoustic night – залуу уран бүтээлчдийн mini concert</li>
+                </ul>
+            </div>
+            <div class="udr">
+                <h2>5 дахь өдөр: Уулын аялал + mindfulness retreat</h2>
+                <p>Зорилго: Өөрийгөө “recharge” хийх</p>
+                <ul class="lis">
+                    <li>Хорьдол Сарьдаг уулсын бэлээр hike</li>
+                    <li>Байгалийн усан оргилуур, хүрхрээ, хаданд зураг авах</li>
+                    <li>Орой: Yoga & Breathwork session, “Reflective journaling”</li>
+                    <li>“Silent dinner” event – утсаа түр орхиж, оддыг ширтэх </li>
+                </ul>
+            </div>
+            <div class="udr">
+                <h2>6–7 дахь өдөр: Соёл ба нийгэмлэг</h2>
+                <p>Зорилго: Орон нутгийн соёлтой танилцах , impact-тэй байх</p>
+                <ul class="lis">
+                    <li>Дархад аймаг руу соёлын аялал</li>
+                    <li>Шаманизмын түүх, тахилга, орон нутгийн урчуудтай уулзах</li>
+                    <li>Community Impact Day – нутгийн сургуульд сайн дурын туслалцаа (мод тарих, хог түүх гэх мэт)
+                    </li>
+                    <li>Цагаан идээ, боов хийх </li>
+                    <li>Cultural Night – орон нутгийн бүжиг, хамтлаг, DJ set</li>
+                </ul>
+            </div>
+
+            <div class="udr">
+                <h2>8 дахь өдөр: Chill & Water festival</h2>
+                <p>Зорилго: Амралт, хөгжил, контент</p>
+                <ul class="lis">
+                    <li>Хөвсгөл Water Festival / Lake Games</li>
+                    <li>Завьны уралдаан, усны бөмбөлөг, багийн тоглоом</li>
+                    <li>Floating stage дээр DJ set, pop-up food zone</li>
+                    <li>Sunset glow party – гэрэлт будаг, EDM vibe </li>
+                </ul>
+            </div>
+            <div class="udr">
+                <h2>9 дахь өдөр: Closing Day — Content & Connection</h2>
+                <p>Зорилго: Талархал, дурсамж үлдээх</p>
+                <ul class="lis">
+                    <li>“Share your story” circle – аяллын туршлага хуваалцах</li>
+                    <li>TikTok / Reels contest – “Best Huvsgul Moment”</li>
+                    <li>Gala night – dress code “Lake Aesthetic”, award ceremony</li>
+                    <li>Best photo, best friend, best volunteer гэх мэт</li>
+                </ul>
+            </div>
+            <div class="udr">
+                <h2>10 дахь өдөр: Буцах аялал</h2>
+                <ul class="lis">
+                    <li>Өглөө эрт нуурын манан дунд yoga / meditation</li>
+                    <li>Хатгал зах дээр дурсгалын зүйл авах</li>
+                    <li>Мөрөн рүү буцах → нислэг → УБ</li>
+                </ul>
+            </div>
+            <button id="closeOverlay" class="btn-learn-more1">Хаах</button>
+        </div>
+
+
+        <script>
+            document.getElementById('closeOverlay').addEventListener('click', ()=>{
+                window.location = 'index.html'
+            })
+        </script>
+</body>
+</html>
