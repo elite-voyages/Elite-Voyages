@@ -1,12 +1,16 @@
 <html lang="mn">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Voyages - Монголын Аялал Жуулчлал</title>
-    <meta name="description" content="Elite Voyages - Монгол дахь шилдэг аялал жуулчлалын үйлчилгээ. Хөвсгөл нуур, УБ-Дархан-Эрдэнэт-Булган-Мөрөн-Хатгал маршрут. Утас: +976-89632553">
+    <meta name="description"
+        content="Elite Voyages - Монгол дахь шилдэг аялал жуулчлалын үйлчилгээ. Хөвсгөл нуур, УБ-Дархан-Эрдэнэт-Булган-Мөрөн-Хатгал маршрут. Утас: +976-89632553">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -44,13 +48,14 @@
         <div class="container">
             <h2 class="section-title">Манай Аяллууд</h2>
             <p class="section-subtitle">Монголын гайхамшигт байгалийг танилцуулах аялалын багцууд</p>
-            
+
             <div class="tours-grid">
 
                 <!-- Tour 1 -->
                 <div class="tour-card">
-                    <img src="https://www.explore.com/img/gallery/a-massive-lake-in-mongolia-with-caribbean-like-waters-is-a-paradise-for-outdoor-lovers/l-intro-1734437159.jpg" class="tour-image">
-                    
+                    <img src="https://www.explore.com/img/gallery/a-massive-lake-in-mongolia-with-caribbean-like-waters-is-a-paradise-for-outdoor-lovers/l-intro-1734437159.jpg"
+                        class="tour-image">
+
                     <div class="tour-content">
                         <span class="tour-duration">9 шөнө / 10 өдөр</span>
                         <h3 class="tour-title">Хөвсгөл Далай - Хатгал</h3>
@@ -63,13 +68,14 @@
 
                 <!-- Tour 2 -->
                 <div class="tour-card">
-                    <img src="http://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZSV1WA0aaTSfUeBC2g5N56Ar19g5j5Sdn-qkyF8DGsZC7-_Eql-uwyqY6pmEEuSumGZ-rEAxgPrj25qQ67MylyuaESQtYVjk6712jac-crV6FQBy_5t9zlFw_FFchyRg5nsbcJLeCb4M/s1600/ugii.jpg" class="tour-image">
+                    <img src="http://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhZSV1WA0aaTSfUeBC2g5N56Ar19g5j5Sdn-qkyF8DGsZC7-_Eql-uwyqY6pmEEuSumGZ-rEAxgPrj25qQ67MylyuaESQtYVjk6712jac-crV6FQBy_5t9zlFw_FFchyRg5nsbcJLeCb4M/s1600/ugii.jpg"
+                        class="tour-image">
                     <div class="tour-content">
                         <span class="tour-duration">3 шөнө / 4 өдөр</span>
                         <h3 class="tour-title">Архангай - Өгий нуур</h3>
                         <p class="tour-route">📍 УБ → Лүн → Өгий нуур</p>
                         <div class="tour-price">343 км</div>
-                        <button class="btn-learn-more">Дэлгэрэнгүй</button>
+                        <button id="openOverlay" class="btn-learn-more">Дэлгэрэнгүй</button>
                     </div>
                 </div>
 
@@ -82,52 +88,109 @@
 
     <!-- ✅ Overlay (NOW moved outside card) -->
     <div id="overlay">
-      <div class="overlay-content">
-          <h1>Хөвсгөл далайн аяллын дэлгэрэнгүй</h1>
-         <div class="udr">
-            <h2>
-                1–2 дахь өдөр: Мөрөн – Хатгал
-            </h2>
-            <p>Зорилго:  Найз нөхөдтэй болох</p>
-            <ul class="lis">
-                <li>Мөрөнд онгоцоор ирээд → Хатгал тосгон руу автобусаар</li>
-                <li>“Welcome Camp” event — аяллын нээлтийн үдэшлэг</li>
-                <li>DJ set, bonfire, хөнгөн коктейл </li>
-                <li>TikTok challenge: “#HuvsgulVibe” эхлүүлэх</li>
-                <li>Гэр буудал  буудалд байрлах</li>
-                <li>Орой “Mindfulness meditation by the lake” </li>
-            </ul>
-         </div>
+        <div class="overlay-content">
+            <h1>Хөвсгөл далайн аяллын дэлгэрэнгүй</h1>
+            <div class="udr">
+                <h2>
+                    1–2 дахь өдөр: Мөрөн – Хатгал
+                </h2>
+                <p>Зорилго: Найз нөхөдтэй болох</p>
+                <ul class="lis">
+                    <li>Мөрөнд онгоцоор ирээд → Хатгал тосгон руу автобусаар</li>
+                    <li>“Welcome Camp” event — аяллын нээлтийн үдэшлэг</li>
+                    <li>DJ set, bonfire, хөнгөн коктейл </li>
+                    <li>TikTok challenge: “#HuvsgulVibe” эхлүүлэх</li>
+                    <li>Гэр буудал буудалд байрлах</li>
+                    <li>Орой “Mindfulness meditation by the lake” </li>
+                </ul>
+            </div>
             <div class="udr">
                 <h2>3–4 дахь өдөр: Адал явдал ба спорт</h2>
-            <p>Зорилго: Энерги, контент, биеийн идэвх</p>
-            <ul class="lis">
-                <li>Нуур дээр Stand Up Paddle Board</li>
-                <li>Морин аялал / дугуйн аялал – нуурын баруун эргээр</li>
-                <li>Photography & Drone Workshop (content creator уригдан заана)</li>
-                <li>Орой “Sunset Cinema Night” – гадаа кино үзэх </li>
-                <li>Live acoustic night – залуу уран бүтээлчдийн mini concert</li>
-            </ul>
+                <p>Зорилго: Энерги, контент, биеийн идэвх</p>
+                <ul class="lis">
+                    <li>Нуур дээр Stand Up Paddle Board</li>
+                    <li>Морин аялал / дугуйн аялал – нуурын баруун эргээр</li>
+                    <li>Photography & Drone Workshop (content creator уригдан заана)</li>
+                    <li>Орой “Sunset Cinema Night” – гадаа кино үзэх </li>
+                    <li>Live acoustic night – залуу уран бүтээлчдийн mini concert</li>
+                </ul>
             </div>
-            
+            <div class="udr">
+                <h2>5 дахь өдөр: Уулын аялал + mindfulness retreat</h2>
+                <p>Зорилго: Өөрийгөө “recharge” хийх</p>
+                <ul class="lis">
+                    <li>Хорьдол Сарьдаг уулсын бэлээр hike</li>
+                    <li>Байгалийн усан оргилуур, хүрхрээ, хаданд зураг авах</li>
+                    <li>Орой: Yoga & Breathwork session, “Reflective journaling”</li>
+                    <li>“Silent dinner” event – утсаа түр орхиж, оддыг ширтэх </li>
+                </ul>
+            </div>
+            <div class="udr">
+                <h2>6–7 дахь өдөр: Соёл ба нийгэмлэг</h2>
+                <p>Зорилго: Орон нутгийн соёлтой танилцах , impact-тэй байх</p>
+                <ul class="lis">
+                    <li>Дархад аймаг руу соёлын аялал</li>
+                    <li>Шаманизмын түүх, тахилга, орон нутгийн урчуудтай уулзах</li>
+                    <li>Community Impact Day – нутгийн сургуульд сайн дурын туслалцаа (мод тарих, хог түүх гэх мэт)
+                    </li>
+                    <li>Цагаан идээ, боов хийх </li>
+                    <li>Cultural Night – орон нутгийн бүжиг, хамтлаг, DJ set</li>
+                </ul>
+            </div>
+
+            <div class="udr">
+                <h2>8 дахь өдөр: Chill & Water festival</h2>
+                <p>Зорилго: Амралт, хөгжил, контент</p>
+                <ul class="lis">
+                    <li>Хөвсгөл Water Festival / Lake Games</li>
+                    <li>Завьны уралдаан, усны бөмбөлөг, багийн тоглоом</li>
+                    <li>Floating stage дээр DJ set, pop-up food zone</li>
+                    <li>Sunset glow party – гэрэлт будаг, EDM vibe </li>
+                </ul>
+            </div>
+            <div class="udr">
+                <h2>9 дахь өдөр: Closing Day — Content & Connection</h2>
+                <p>Зорилго: Талархал, дурсамж үлдээх</p>
+                <ul class="lis">
+                    <li>“Share your story” circle – аяллын туршлага хуваалцах</li>
+                    <li>TikTok / Reels contest – “Best Huvsgul Moment”</li>
+                    <li>Gala night – dress code “Lake Aesthetic”, award ceremony</li>
+                    <li>Best photo, best friend, best volunteer гэх мэт</li>
+                </ul>
+            </div>
+            <div class="udr">
+                <h2>10 дахь өдөр: Буцах аялал</h2>
+                <ul class="lis">
+                    <li>Өглөө эрт нуурын манан дунд yoga / meditation</li>
+                    <li>Хатгал зах дээр дурсгалын зүйл авах</li>
+                    <li>Мөрөн рүү буцах → нислэг → УБ</li>
+                </ul>
+            </div>
+            <button id="closeOverlay" class="btn-learn-more1">Хаах</button>
+        </div>
 
 
 
-          <button id="closeOverlay" class="btn-learn-more1">Хаах</button>
-      </div>
+
+
+
+        
     </div>
-        <!-- Contact Section -->
+    </div>
+    <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container">
-            
-            
+
+
             <div class="contact-card">
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; text-align: center; margin-bottom: 2rem;">Бидэнтэй холбогдох</h3>
-                
+                <h3
+                    style="font-family: 'Playfair Display', serif; font-size: 2rem; text-align: center; margin-bottom: 2rem;">
+                    Бидэнтэй холбогдох</h3>
+
                 <div class="contact-grid">
                     <div class="list">
                         <h4 style="font-weight: 600; margin-bottom: 1rem;">Холбоо барих мэдээлэл</h4>
-                        
+
                         <a href="tel:+97689632553" class="contact-item">
                             <div class="contact-icon">📞</div>
                             <div>
@@ -136,16 +199,18 @@
                             </div>
                         </a>
 
-                        
 
-                        <a href="https://www.facebook.com/profile.php?id=61583454325796" target="_blank" class="contact-item" style="margin-top: 1rem;">
+
+                        <a href="https://www.facebook.com/profile.php?id=61583454325796" target="_blank"
+                            class="contact-item" style="margin-top: 1rem;">
                             <div class="contact-icon">📘</div>
                             <div>
                                 <p style="font-size: 0.875rem; color: #8B7355;">Facebook</p>
                                 <p style="font-weight: 600;">Elite-Voyages</p>
                             </div>
                         </a>
-                        <a href="https://www.facebook.com/profile.php?id=61583454325796" target="_blank" class="contact-item" style="margin-top: 1rem;">
+                        <a href="https://www.facebook.com/profile.php?id=61583454325796" target="_blank"
+                            class="contact-item" style="margin-top: 1rem;">
                             <div class="contact-icon">📧</div>
                             <div>
                                 <p style="font-size: 0.875rem; color: #8B7355;">Майл хаяг</p>
@@ -177,7 +242,8 @@
                     <p style="color: rgba(245, 239, 230, 0.8); margin-bottom: 1rem;">
                         Монгол орны гайхамшигт байгалийг танд танилцуулж, мартагдашгүй дурсамж бүтээхэд тусална.
                     </p>
-                    <a href="https://www.facebook.com/profile.php?id=61583454325796" target="_blank" class="social-icon">f</a>
+                    <a href="https://www.facebook.com/profile.php?id=61583454325796" target="_blank"
+                        class="social-icon">f</a>
                 </div>
 
                 <div>
@@ -206,4 +272,5 @@
 
     <script src="app.js"></script>
 </body>
+
 </html>
